@@ -1,0 +1,26 @@
+
+<h1>Workspaces</h1>
+
+{{if eq (len .Workspaces) 0}}
+  <p>Oho duckling, looks like it's your first visit.</p>
+  <p>Start by creating your own workspaces now.</p>
+{{end}}
+
+<div class="cards">
+  {{range .Workspaces}}
+    <a href="/workspaces/{{.ID}}">
+      <div class="card">
+        <span>{{.Topic}}</span>
+      </div>
+    </a>
+  {{end}}
+</div>
+
+
+<h2>Create a new Workspace</h2>
+
+<form action="/workspaces" method="POST">
+  <label for="topic">Topic</label>
+  <input type="text" id="topic" name="topic" required />
+  <button type="submit">create</button>
+</form>

@@ -1,0 +1,20 @@
+<a href="/">Back to Workspaces</a>
+
+<h1>Workspace {{.Workspace.Topic}}</h1>
+
+
+<form action="/workspaces/{{.Workspace.ID}}/meeting" method="POST">
+  <button type="submit">Start Meeting</button>
+</form>
+
+<ul>
+  {{range .Workspace.Meetings}}
+    <li>{{.StartedAt}} - {{if .IsActive}}active{{else}}{{.EndedAt}}{{end}}</li>
+  {{end}}
+</ul>
+
+<ul>
+  {{range .Workspace.Recordings}}
+    <li><a href="/recordings/{{.ID}}">{{.StartedAt}}</a></li>
+  {{end}}
+</ul>

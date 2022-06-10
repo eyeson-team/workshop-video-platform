@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>MeetDuck - Producktive Meetings</title>
+
+    <link rel="stylesheet" href="/assets/styles.css" />
+  </head>
+  <body>
+    <header>
+      {{if .User}}
+          <a href="/">
+            <img src="/assets/logo-header.png" id="logo-header" alt="header logo" height="80px" />
+          </a>
+
+          <span>
+            {{.User.Name}}
+            | <a href="/logout">Sign Out</a>
+          </span>
+      {{else}}
+        <span>
+          MeetDuck powered by
+          <a href="https://www.eyeson.com/" target="_blank" rel="noopener">eyeson.com</a>
+        </span>
+      {{end}}
+    </header>
+
+    <main>
+      {{embed}}
+    </main>
+  </body>
+</html>

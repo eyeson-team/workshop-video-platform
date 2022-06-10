@@ -1,0 +1,24 @@
+<a href="/">Back to Workspaces</a>
+| <a href="/workspaces/{{.Workspace.ID}}">Back to "{{.Workspace.Topic}}"</a>
+
+<h1>Update {{.Workspace.Topic}}</h1>
+
+<form action="/workspaces/{{.Workspace.ID}}/edit" method="POST">
+  <label for="topic">Topic</label>
+  <input type="text" id="topic" name="topic" value="{{.Workspace.Topic}}" required />
+  <label for="content">Content</label>
+  <textarea id="content" name="content" cols="60" rows="20">{{.Workspace.Content}}</textarea>
+  <button type="submit">update</button>
+</form>
+
+<h2>Members of the Workspace</h2>
+
+<form action="/workspaces/{{.Workspace.ID}}/users" method="POST">
+  <label for="user_id">Add a New User</label>
+  <select id="user_id" name="user_id">
+    {{range .Users}}
+      <option value="{{.ID}}">{{.Name}} ({{.Email}})</option>
+    {{end}}
+  </select>
+  <button type="submit">add</button>
+</form>

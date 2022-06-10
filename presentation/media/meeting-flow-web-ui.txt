@@ -1,0 +1,9 @@
+@startuml
+User -> MeetDuck: Request to Start/Join a Meeting
+MeetDuck -> eyesonAPI: Request Meeting for a Unique Room
+eyesonAPI -> MeetDuck: Meeting Access
+MeetDuck -> User: Forward to eyeson Web UI
+
+User --> eyesonWebUI: Join the Meeting
+eyesonWebUI --> MeetDuck: Leave the Meeting
+@enduml

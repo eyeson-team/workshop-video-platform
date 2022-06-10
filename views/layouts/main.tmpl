@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>MeetDuck - Producktive Meetings</title>
+
+    <link rel="stylesheet" href="/assets/styles.css" />
+  </head>
+  <body>
+    <header>
+      {{if .User}}
+          <a href="/">
+            <img src="/assets/logo-header.png" id="logo-header" alt="header logo" height="80px" />
+          </a>
+
+          <span>
+            {{.User.Name}}
+            | <a href="/signout">Sign Out</a>
+          </span>
+      {{else}}
+        <span>
+          MeetDuck powered by
+          <a href="https://www.eyeson.com/" target="_blank" rel="noopener">eyeson.com</a>
+        </span>
+      {{end}}
+    </header>
+
+    <main>
+      {{embed}}
+    </main>
+
+    <script>
+      // Transform dates/times to localized representations by taking all HTML
+      // time elements, read its date-time attribute value and translate it to
+      // a locale string.
+      document.querySelectorAll("time")
+        .forEach(e => (e.innerHTML = new Date(e.dateTime).toLocaleString()));
+    </script>
+  </body>
+</html>

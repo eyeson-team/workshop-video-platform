@@ -1,0 +1,20 @@
+
+<a href="/workspaces/new">New Workspace</a>
+
+<h1>Workspaces of {{.User.Name}}</h1>
+
+{{if eq (len .Workspaces) 0}}
+  <p>Oho duckling, looks like it's your first visit.</p>
+  <p>Start by creating
+    <a href="/workspaces/new">your own workspaces now</a>.</p>
+{{end}}
+
+<div class="cards">
+  {{range .Workspaces}}
+    <a href="/workspaces/{{.ID}}">
+      <div class="card">
+        <span>{{.Topic}}</span>
+      </div>
+    </a>
+  {{end}}
+</div>

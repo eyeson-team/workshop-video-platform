@@ -1,0 +1,9 @@
+/db/*
+/logs/*
+/assets/fonts/*
+/presentation/*.pdf
+
+/presentation/step-0/
+
+local.db
+source.me

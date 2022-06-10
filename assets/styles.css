@@ -1,0 +1,175 @@
+:root {
+  --main-color: #09B5E9;
+  --link-color: brown;
+  --bg-color: lightgray;
+  --text-secondary-color: white;
+  --danger-color: orangered;
+
+  accent-color: var(--main-color);
+}
+/** color-scheme: light dark; **/
+
+@font-face {
+  font-family: "Asap";
+  src: url("./fonts/Asap.ttf");
+}
+
+html {
+  font-family: "Asap", "Verdana", "Calibri", serif;
+  font-size: large;
+}
+
+body {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+header {
+  width: 100vw;
+  box-sizing: border-box;
+  padding: 1.2rem;
+
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.text-small { font-size: smaller; }
+
+main {
+  box-sizing: border-box;
+  padding: 1.2rem;
+  width: 100vw;
+}
+@media screen and (min-width: 65rem) {
+  main { width: 60rem; }
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+video {
+  max-width: 90vw;
+  min-height: 20rem;
+}
+
+form {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+}
+
+input, textarea, select {
+  padding: .25rem;
+  margin: .25rem 0;
+  font-size: large;
+}
+button {
+  background: var(--main-color);
+  color: var(--text-secondary-color);
+  border: none;
+  border-radius: .25rem;
+  padding: .5rem .75rem;
+  margin: .25rem .5rem 0 0;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+button:hover {
+  opacity: .9;
+}
+button:active {
+  opacity: .8;
+}
+
+hr {
+  margin: .96rem 30%;
+}
+
+#logo-header {
+  height: 5rem;
+  transform: translateY(-2rem);
+}
+#logo {
+  max-width: 80vw;
+}
+
+#login-box {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  justify-content: space-around;
+  max-width: 45rem;
+}
+
+#meeting-container {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  padding: 2.5rem;
+  box-sizing: border-box;
+}
+#meeting-controls {
+  display: flex;
+  flex-flow: row nowrap;
+}
+#meeting-log {
+  display: flex;
+  flex-flow: column-reverse nowrap;
+}
+
+.cards {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.card {
+  width: 9.6rem;
+  height: 9.6rem;
+  margin: 1.2rem;
+
+  border-bottom: .3rem solid var(--main-color);
+  border-radius: .6rem;
+
+  font-size: medium;
+  font-weight: bold;
+
+  text-align: center;
+  text-transform: uppercase;
+
+  text-overflow: clip;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgb(99 99 99 / 20%) 0 .125rem .5rem 0;
+}
+
+.actions {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.gallery {
+  display: flex;
+  flex-flow: row wrap;
+}
+.gallery > * {
+  margin: 0.4rem;
+}
+.gallery video {
+  width: 20rem;
+}
+.gallery img {
+  width: 10rem;
+  border-bottom: .3rem solid var(--main-color);
+  border-radius: .6rem;
+}
+
+button.muted, button.active {
+  background-color: var(--danger-color);
+}

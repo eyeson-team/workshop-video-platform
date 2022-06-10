@@ -1,0 +1,8 @@
+
+<a href="/">Back to workspaces</a>
+
+<h1>{{.Workspace.Topic}}</h1>
+
+<form action="/workspaces/{{.Workspace.ID}}/meeting" method="POST">
+  <button type="submit">Join a Meeting</button>
+</form>

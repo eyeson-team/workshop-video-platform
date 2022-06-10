@@ -1,0 +1,28 @@
+{
+  "timestamp": 1637747101,
+  "type": "recording_update",
+  "recording": {
+    "id": "6**********************0",
+    "created_at": 1637747098,
+    "duration": 2,
+    "links": {
+      "self": "https://api.eyeson.team/recordings/6**********************0",
+      "download": "https://s3.eyeson.com/meetings/*****"
+    },
+    "user": {
+      "id": "6**********************e",
+      "name": "chl",
+      "avatar": null,
+      "guest": false,
+      "joined_at": "2021-11-24T09:44:19.294Z"
+    },
+    "room": {
+      "id": "demo",
+      "name": "John",
+      "ready": true,
+      "started_at": "2021-11-24T09:44:16.768Z",
+      "shutdown": false,
+      "guest_token": "********guest********"
+    }
+  }
+}

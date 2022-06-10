@@ -1,0 +1,11 @@
+@startuml
+User -> MeetDuck: Request to Start/Join a Meeting
+MeetDuck -> eyesonAPI: Request Meeting for a Unique Room
+eyesonAPI -> MeetDuck: Meeting Access
+eyesonAPI -> MeetDuck: (Webhook) Meeting Started
+MeetDuck -> User: Provide Meeting Access Key
+
+eyesonAPI -> MeetDuck: (Webhook) Recording Started
+eyesonAPI -> MeetDuck: (Webhook) Recording Stopped
+eyesonAPI -> MeetDuck: (Webhook) Meeting Stopped
+@enduml

@@ -1,0 +1,13 @@
+<a href="/">Back to Workspaces</a>
+| <a href="/workspaces/{{.Meeting.WorkspaceID}}">Back to Workspace</a>
+
+<h1>Edit Meeting from {{.Meeting.StartedAt | datetime}}</h1>
+
+<p>Add content of the meeting, conclusions, a short summary...</p>
+
+<form action="/meetings/{{.Meeting.ID}}/edit" method="POST">
+  <label for="content">Meeting Event Details</label>
+  <textarea id="content" name="content" cols="60" rows="20">{{.Meeting.Content}}</textarea>
+  <button type="submit">update</button>
+</form>
+

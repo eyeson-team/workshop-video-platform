@@ -1,0 +1,25 @@
+<a href="/">Back to Workspaces</a>
+| <a href="/workspaces/{{.Workspace.ID}}">Back to Workspace</a>
+
+<div id="meeting-container">
+  <video id="meeting-stream" data-access-key="{{.AccessKey}}" autoplay></video>
+
+  <div id="meeting-controls">
+    <button id="mute-video">mute video</button>
+    <button id="mute-audio">mute audio</button>
+    <button id="record">record</button>
+  </div>
+
+  <ul id="meeting-log">
+  </ul>
+</div>
+
+<script src="/assets/eyeson.js"></script>
+<script src="/assets/meeting.js"></script>
+
+<p>
+  Find out more about how to create your own
+  <a href="https://www.eyeson.com">eyeson</a>
+  video meeting interface reading the
+  <a href="https://eyeson-team.github.io/js-docs/overview/">JavaScript Client Package Documentation</a>
+</p>

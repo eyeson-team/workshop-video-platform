@@ -1,0 +1,14 @@
+# MAIL_SMTP_PWD does set the gmail password for the SMTP credentials for the
+# static email user to send login emails.
+# export MAIL_SMTP_PWD=...
+
+# Cookie Secret is a 32-byte secure random value that is used to seed the
+# encryption for the application cookies.
+# export COOKIE_SECRET=...
+
+# The eyeson API key retrieved from https://developers.eyeson.team/
+export API_KEY=...
+
+# The public domain our application is served from that enables to receive
+# webhooks from the eyeson API service.
+export WH_URL=https://meetduck.demo.eyeson.com

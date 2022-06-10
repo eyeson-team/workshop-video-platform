@@ -1,0 +1,83 @@
+<a href="/">Back to Workspaces</a>
+| <a href="/workspaces/{{.Workspace.ID}}/edit">Edit Workspace</a>
+
+<h1>{{.Workspace.Topic}} Workspace</h1>
+
+<section class="text-small">
+  <p>
+    Assigned Users:
+
+    {{$first := true}}
+    {{range .Workspace.Users}}
+      {{if not $first}}, {{end}}
+      <a href="mailto:{{.Email}}">{{.Name}}</a>
+      {{$first = false}}
+    {{end}}
+  </p>
+</section>
+
+<section class="actions">
+  <form action="/workspaces/{{.Workspace.ID}}/meeting" method="POST">
+    <input type="hidden" name="mode" value="duck" />
+    <button type="submit">join a meeting</button>
+  </form>
+
+  <form action="/workspaces/{{.Workspace.ID}}/meeting" method="POST">
+    <input type="hidden" name="mode" value="forward" />
+    <button type="submit">eyeson ui</button>
+  </form>
+</section>
+
+<section id="workspace-content">
+  {{.Workspace.Content | markdown}}
+</section>
+
+<hr />
+
+<h2>Meeting Events</h2>
+
+{{if eq (len .Workspace.Meetings) 0}}
+  <p>No meetings have been registered for this workspace so far.</p>
+{{end}}
+
+<ul>
+  {{range .Workspace.Meetings}}
+    <li>
+      <p>Meeting from
+        <span>{{.StartedAt | datetime}}</span>
+        {{if .Active}}
+          <span>still running!</span>
+        {{else}}
+          to <span>{{.EndedAt | datetime}}</span>
+        {{end}},
+        <a href="/meetings/{{.ID}}/edit">Edit</a>
+      </p>
+      {{.Content | markdown}}
+    </li>
+  {{end}}
+</ul>
+
+{{if gt (len .Workspace.Recordings) 0}}
+<h2>Recordings</h2>
+<div class="gallery">
+  {{range .Workspace.Recordings}}
+    <div>
+      <video controls preload="none" src="{{.Path}}"></video>
+      <p class="text-small">Recording from {{.StartedAt | datetime}},
+        <a href="{{.Path}}" rel="noopener" target="_blank">Download</a></p>
+    </div>
+  {{end}}
+</div>
+{{end}}
+
+{{if gt (len .Workspace.Snapshots) 0}}
+<h2>Snapshots</h2>
+<div class="gallery">
+  {{range .Workspace.Snapshots}}
+    <a href="{{.Path}}"
+      rel="noopener" target="_blank">
+      <img src="{{.Path}}" alt="Snapshot from {{.CreatedAt}}">
+    </a>
+  {{end}}
+</div>
+{{end}}

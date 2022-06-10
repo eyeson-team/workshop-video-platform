@@ -1,0 +1,12 @@
+{
+  "timestamp": 1637738200,
+  "type": "room_update",
+  "room": {
+    "id": "demo",
+    "name": "John",
+    "ready": true,
+    "started_at": "2021-11-24T07:16:37.748Z",
+    "shutdown": false,
+    "guest_token": "********guest********"
+  }
+}
